@@ -2,21 +2,24 @@ services:
   web:
     image: nginx:latest
     ports:
-      - 80:80
+      - "80:80"
     volumes:
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
       - ./public/:/var/www/public/
       - image:/var/www/upload/image/
     depends_on:
       - php
+      - mysql
+
   php:
     container_name: php
     build:
-      context: .
+      context: ./docker/web
       target: php
     volumes:
       - ./public/:/var/www/public/
       - image:/var/www/upload/image/
+
   mysql:
     container_name: mysql
     image: mysql:8.4
@@ -26,12 +29,8 @@ services:
       TZ: Asia/Tokyo
     volumes:
       - mysql:/var/lib/mysql
-      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-    command: >
-      mysqld
-      --character-set-server=utf8mb4
-      --collation-server=utf8mb4_unicode_ci
-      --max_allowed_packet=4MB
+      - ./docker/mysql/init/:/docker-entrypoint-initdb.d/
+
 volumes:
   mysql:
   image:
