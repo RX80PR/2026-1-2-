@@ -4,13 +4,13 @@
 
 ### 1. リポジトリのクローンとディレクトリ移動
 
-`git clone` でリポジトリをクローンし、設定ファイル（ `compose.yml` ）があるフォルダへ移動します。
+`git clone` でリポジトリをクローンし、設定ファイル（ `compose.yml` ）があるフォルダへ移動する。
 
 ```bash
 git clone [https://github.com/RX80PR/2026-1-2-.git](https://github.com/RX80PR/2026-1-2-.git)
 cd 2026-1-2-
 ```
-# ※ 移動しないと compose.yml が見つからず起動エラーになるため。
+※ 移動しないと compose.yml が見つからず起動エラーになるため。
 
 
 ### 2. Docker Compose で起動
@@ -20,15 +20,15 @@ cd 2026-1-2-
 ```bash
 docker compose up
 ```
-# ※ 初回起動時にテーブルの自動作成(init.sql の実行)が行われます。
+※ 初回起動時にテーブルの自動作成(init.sql の実行)が行われます。
 
 ### 3. アクセス
 
-ブラウザから以下のURLにアクセスします。
+ブラウザから以下のURLにアクセスする。
 
 ```bash
 http://[your-ip]/bbsimagetest.php
 ```
 
-# ※ your-ip の部分は、ご自身の環境 (EC2のパブリックIPなど) に書き換えてください。i
+※ your-ip の部分は、自身の環境 (EC2のパブリックIPなど) に合わせて書き換えてください。
 
