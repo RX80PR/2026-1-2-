@@ -26,5 +26,3 @@
     height: auto !important;
   }
 }
-
-echo "/* test */" >> public/style.css
