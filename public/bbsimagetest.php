@@ -45,6 +45,10 @@ $select_sth->execute();
 ?>
 <head>
   <title>画像投稿できる掲示板</title>
+  <!-- 画面幅に合わせて表示する -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 同じフォルダ内のstyle.cssを読み込む -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 <!-- フォームのPOST先はこのファイル自身にする -->
 <form method="POST" action="./bbsimagetest.php" enctype="multipart/form-data">
